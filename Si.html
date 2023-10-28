@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>CALCULATE SIMPLE INTEREST</h1>
+        <hr/>
+        <table>
+            <tr>
+                <td>Enter Principal Amount :</td>
+                <td>
+                    <input type="number" id="txtPrincipalAmount"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Time Period :</td>
+                <td>
+                    <input type="number" id="txtTimePeriod"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Rate of Interest :</td>
+                <td>
+                    <input type="number" id="txtRateOfInterest"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="findSi()">Find SI</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Simple Interest :
+                </td>
+                <td>
+                    <h4 id="result"></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function findSi(){
+             //1. Collect all Inputs and store into the variable
+                 let p = parseInt(document.getElementById('txtPrincipalAmount').value);
+                 let t = parseInt(document.getElementById('txtTimePeriod').value);
+                 let r = parseInt(document.getElementById('txtRateOfInterest').value);
+             //2. Calculate SI
+                 let si = (p*t*r)/100;
+             //3. Dispaly SI
+                 document.getElementById('result').innerHTML = si
+        } 
+    </script>
+</body>
+</html>
