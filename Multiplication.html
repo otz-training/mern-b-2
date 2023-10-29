@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            border: 1px solid blue;
+            padding: 5px;
+            margin-right: px;;
+        }
+        #result{
+            margin-top: 30px;;
+        }
+        .line{
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>MULTIPLICATION TABLE</h1>
+        <hr>
+        <label>Enter a Numberv:</label>
+        <input type="number" id="txtNum"/>
+        <br>
+        <button onclick="showTable()" >Show</button>
+    </div>
+    <div id="result">
+
+    </div>
+    <script>
+        function showTable(){
+            let n = parseInt(document.getElementById('txtNum').value);
+            let str='';
+            for(let i=1;i<=10;i++){
+                 //x+=5; -> x = x+5
+                 str+='<div class=line>';
+                 str+='<span>'+n+'</span>x<span>'+i+'</span>=<span>'+n*i+'</span>';
+                 str+='</div>';
+            }
+            console.log(str);
+            document.getElementById('result').innerHTML= str;
+        }
+    </script>
+</body>
+</html>
