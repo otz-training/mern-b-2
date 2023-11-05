@@ -281,4 +281,36 @@ d. slice()
   console.log(arr8); //[2,3]
   console.log(arr9); //[1,2]
 
-e.
+e.splice()
+
+Difference between slice() and splice()
+
+concat()
+
+f. map() ,reduce() ,filter()
+
+const arr = [3,4,5];
+
+const arr2 = arr.map(function(a){
+return a\*2;
+});
+console.log(arr1);
+console.log(arr2);
+
+=> Callback Function :
+
+---
+
+-
+
+## Task For You
+
+Complete all Array Function Concepts
+
+function multiply(x,y){
+retunr x\*y;
+}
+
+function callMultiply(fn,val1,val2){
+return fn(val1,val2);
+}
