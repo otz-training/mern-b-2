@@ -307,10 +307,22 @@ console.log(arr2);
 
 Complete all Array Function Concepts
 
-function multiply(x,y){
-retunr x\*y;
-}
+Call back Functions
 
-function callMultiply(fn,val1,val2){
-return fn(val1,val2);
-}
+## 07-11-2023 (Tuesday)
+
+map() Method :
+
+The map() function is used to get modified version of the array.
+
+map() applies a function to each array element and creates a new array of the returned
+values.
+
+The Syntax :
+
+array.map(()=>{});
+
+Example:
+
+const arr =[10,20,30,40.50];
+arr1 = arr.map(a=>a\*2);
