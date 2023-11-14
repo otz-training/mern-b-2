@@ -326,3 +326,141 @@ Example:
 
 const arr =[10,20,30,40.50];
 arr1 = arr.map(a=>a\*2);
+
+Question :
+
+const products =[
+{name :'Laptop',price:50000,quantity:2},
+{name :'Phone',price:10000,quantity:4},
+{name :'Tablet',price:20000,quantity:5},
+]
+
+Calculate the total cost of all products.
+
+# let , Var ,const
+
+---
+
+# Variable Scope :
+
+    - Scope determines the visibility and accessibility of a variable.
+    - There are three types of scope in JS
+
+      a. The Global Scope
+
+      b. Local Scope
+
+      c. Block Scope (ES6)
+
+# Global Scope :
+
+    - When the javascript engine excutes a script ,it creates a global execution context.
+
+    - Global execution context having 2 phase :
+
+      1. Creation Phase
+         In this pahse all memory allocation will takes place then varibales are
+         assigned with undefined value.
+
+      2. Execution Phase
+
+         Execution of statement will takes place
+
+# local Scope :
+
+      - Scope within the function is called local scope.
+
+      - Variable declared within the local scope is called local variable.
+
+      - Functions are having there own execution context.
+
+      - It is also having two phase.
+
+    # Example :
+
+     ```
+        var count = 10;
+
+        function test() {
+        console.log(count);
+        var count = 80;
+        console.log(count);
+        }
+
+        test();
+        console.log(count);
+        ```
+
+# local Scope :
+
+       function getCounter() {
+            counter = 10;
+            return counter;
+        }
+        console.log(getCounter());
+        console.log(counter);
+
+NOTE: if we are not declaring a variable without any keyword then the variable
+used inside the function will allocate memory in global execution context.
+
+# Block Scope :
+
+- The variable declared using let ,const keyword is having the scope within the block.
+
+- The block may be Anonymous Block, Conditional block,Loop Block.
+
+- This block scope has introduce in ES6.
+
+var : Function Scope
+
+let : Block Scope
+
+const :Block Scope
+
+- var vs let keyword
+
+  ## let :
+
+  - let is not hoisted
+
+  - block-scoped
+    var :
+
+  ***
+
+  - var is hoisted
+  - function-scoped /local scope
+
+  # What is Hoisting ? How many type of Hoisting are there ?
+
+  x=5;
+  var x;
+
+  fun();
+  function fun(){
+
+  }
+
+# Functions in Javascript :
+
+---
+
+Outlines :
+
+1. Functions
+
+2. Anonymous Function
+
+3. Default Parameter
+
+4. Function Type
+
+5. call() ,Apply(),Bind()
+
+6. Arrow Function
+
+7. Rest Parameters
+
+8. Closure
+
+# 1.Function :
