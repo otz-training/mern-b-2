@@ -464,3 +464,219 @@ Outlines :
 8. Closure
 
 # 1.Function :
+
+    -> Declare a function :
+
+       function <function_name>(parameters){
+          function body
+          [return value;]
+       }
+
+       Example:
+
+         function sum(a,b)
+         {
+             return a+b;
+         }
+    -> Calling a function
+
+
+         const res = sum(4,5);
+
+    -> Paramters and Arguments
+
+       - Parameters are variable present in the function definition,which receives
+       the value from funcion call.
+
+       - Paramter always should be a variable.
+
+       - Arguments are the  the values which we pass during function calling.
+
+       - Arguments can be a value ,varibales or an expression.
+
+            sum(4,5);
+            let x=9,y=7;
+            sum(x,y);
+            sum(3+4,6+6);
+
+    -> Return Keyword :
+
+         - A function can return only one value at a time.
+
+         - If you want that function shuld return multiple value
+           then we may return an array or an object.
+
+    -> The argument Object :
+
+       ```
+         function sum(x,y){
+            console.log("Total Number of arguments:"+arguments.length);
+            console.log("Total Number of arguments:"+JSON.stringify(arguments));
+            return x+y;
+        }
+        let res=sum(1,2,3,4,5,6,7,8,9);
+        console.log(sum.prototype);
+        console.log("Name of the Function :"+sum.name);
+        console.log("Total Number of Parameters :"+sum.length);
+
+        console.log("Result :"+res);
+
+        res=sum(1,2,3);
+       ```
+
+       -> Function Hoisting :
+
+          sum(x,y);
+          function sum(x,y){
+            return x+y;
+          }
+
+
+       ->  Storing a Function in Variables:
+
+          function sum(x,y){
+            return x+y;
+          }
+
+          const add = sum;
+
+          consoe.log(add(10,20));
+
+
+          const sqr = function(n){
+                return n * n;
+          }
+
+          console.log(sqr(5));
+
+       -> Passing function to another function as an argument
+
+          Example-1 :
+
+           function even(n){
+                return n%2 == 0 ? true : false;
+           }
+           function check(fn,n){
+                return fn(n);
+           }
+
+           console.log(check(even,4));
+
+       -> A function can return a function
+
+          Example:
+
+
+           function check(n){
+                return  function(n){
+                     return n%2 == 0 ? true : false;
+                }
+           }
+
+           const fn=check(4);
+           fn(6);
+
+# 2. Anonymous Function :
+
+      -> The function having no name is called anonymous function.
+
+      -> Example:
+
+          function(){
+
+          }
+
+      -> An anonymous function is not accessible after its initial creation,
+         so, we need to assign it inot a variable.
+
+         Example:
+
+          const function_name =function(){
+
+          }
+
+          function_name();
+
+       -> If we want to invoke anonymous function ,immediately after it's
+          creation
+
+          Example:
+
+             function(){
+
+             }();
+
+             (function (a, b) {
+                     return a + b;
+            })(2, 3);
+
+            https://www.udacity.com/blog/2023/03/immediately-invoked-function-expressions-iife-in-javascript.html#:~:text=An%20immediately%20invoked%20function%20expression,the%20code%20that%20we%20write.
+
+        - Using anonymous function as arguments
+
+            setTimeout(function(){
+                 Console.log("Execution happen after 1 second");
+            },1000);
+
+    # 3. Default Parameters:
+
+        function sum(x,y)
+        {
+            return x+y;
+        }
+
+        console.log(sum());
+        console.log(sum(1,2));
+        console.log(sum (1));
+
+        OUTPUT:
+
+        NaN
+        3
+        NaN
+
+     -  To prevent result as NaN we can assign default value to the fucntion paramter.
+
+        function sum(x=0,y=0)
+        {
+            return x+y;
+        }
+
+        console.log(sum());
+        console.log(sum(1,2));
+        console.log(sum (1));
+
+        OUTPUT:
+
+        0
+        3
+        1
+
+
+    # 4. Function Type :
+
+       -
+          function test()
+          {
+
+          }
+
+          console.log(typeof test);
+
+       - In JS ,all function are objects.
+
+       - They instance of function type.
+
+       - Since they are object ,they have properties and methods.
+
+       - length is a property which return number of paramter in the function.
+
+       - prototype is a property ,which it the referencde to the actual function object.
+
+       - Important Methods of Function Object
+
+         a. apply()
+
+         b. call()
+
+         c. bind()
