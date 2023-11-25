@@ -680,3 +680,216 @@ Outlines :
          b. call()
 
          c. bind()
+
+# 18-11-2023 :
+
+Arrow Function :
+
+---
+
+- Introduced in ES6
+
+- It used to write shorter and more concise function expression.
+
+- syntax :
+
+  const functionName = () =>{
+  return result;
+  }
+
+- Example:
+
+      function sum(x,y){
+          return x+y;
+      }
+
+
+      function  fact(n){
+          let f=1;
+          while(n!=0){
+             f = f * n;
+             n-=1;
+          }
+          return f;
+      }
+
+      const sum = (x,y) => x+y;
+
+      const fact = (n) =>{
+         let f=1;
+          while(n!=0){
+             f = f * n;
+             n-=1;
+          }
+          return f;
+      }
+
+  - Characteristics :
+
+    1.  Shorter Syntax
+
+    2.  Implicit return
+
+    3.  No Binding of this
+
+    4.  Arrow function can not be used as constructor function
+
+    5.  It do not have their own arguments object.
+
+  # this Keyword In JS :
+
+       - In JS this keyword refers to the current execution context. that means
+         the objects that owns the current executing code.
+
+       - The behaviour of the this keyword depends on how and where it isused within a function or method.
+
+       - N.B : In webbrowser environment  global object is Window
+               In Node.js environment the global object is global
+
+       -Example :
+
+                console.log(this);
+                function test() {
+                  console.log("within test():"+this);
+                  test1();
+                }
+
+                function test1() {
+                  console.log("within test1():"+this);
+                }
+                test();
+
+                const student = {
+                    fname : "Alok",
+                    lname : 'Kumar',
+                    fullName   : function(){
+                        console.log(this);
+                    }
+                }
+
+                student.fullName();
+
+        - Behaviour of this
+
+          1. Global Context :
+
+             It is refering to GLobal Object
+
+          2. Function Context :
+
+             - In regular function it is depending on how the function is called.
+
+             - If the function is a method then  this is refering to the object inside
+               which the method is present.
+
+             - If the function is called standalone ,this might refer to the
+               global object (in non-strict mode) or undefined in (strict mode).
+
+               Example :
+
+               function test() {
+                "use strict";
+                console.log("within test():"+this);
+                test1();
+              }
+
+              function test1() {
+                console.log("within test1():"+this);
+              }
+              test();
+
+
+            3.Explicitly Setting this :
+
+             We can explicitly set the value of this using bind ,call and apply method.
+
+      # Function Methods : apply ,call ,bind
+
+        -> let cat = {
+
+  type: "Cat",
+  sound: "Meow",
+  };
+
+let dog = {
+type: "Dog",
+sound: "Bark",
+};
+
+const say = function (message) {
+console.log(message);
+console.log(this.type + " says " + this.sound);
+};
+
+say("hello");
+say.call(cat,"What does a cat say?");
+say.call(dog,"What does a dog say?");
+
+say.apply(dog,["What does a dog say?"]);
+
+const sayForCat = say.bind(cat);
+const sayForDog = say.bind(dog);
+sayForCat("Abcde what cat says?");
+sayForDog("What dog Says ?");
+
+# 24-11-2023 :
+
+---
+
+# Closures :
+
+---
+
+- A closure is a function that references varibales in the outer scope from the innerscope.
+
+- The closure preserves the outer scope inside the inner scope.
+
+- Lexical Scoping :
+
+  let name ="Alok";
+  function test(){
+  let message ='Hello';
+  console.log(message+' '+name);
+  }
+
+  function greeting(){
+  let message = 'Hi';
+  function sayHi(){
+  console.log(message);
+  }
+  sayHi();
+  }
+  greeting();
+
+- Example of Closure :
+
+  function greeting(){
+  let message = 'Hi';
+  function sayHi(){
+  console.log(message);
+  }
+  return sayHi;
+  }
+  let hi = greeting();
+  console.log(hi);
+  hi();
+
+- function greeting(message){
+  return function (name){
+  return message +' '+name;
+  }
+  }
+
+  let sayHi = greeting('Hi');
+  let sayHello = greeting('Hello');
+  console.log(sayHi('Rabi'));
+  console.log(sayHello('Rabi'));
+
+- Closure in a loop
+
+  for(var index=1;index<=3;index++)
+  {
+  setTimeout(function(){
+  conole.log(' after '+index+' second(s): '+index);
+  },index \* 1000)
+  }
