@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+            function createButton(){
+                let count=0;
+                const button = document.createElement('button');
+                button.textContent = 'Click me';
+                button.addEventListener('click',function(){
+                      count++;
+                      console.log(`Buttton clicked ${count} times `);
+                });
+                return button;
+            }
+
+            document.body.appendChild(createButton());
+        </script>
+    </body>
+</html>
