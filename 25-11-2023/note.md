@@ -33,3 +33,23 @@
   }
 
   let b = Book("Php",500);
+
+28-11-2023 :
+
+-Object
+-Constructor Function
+-Prototype
+-prototype Linkage
+**proto**
+
+- ## Prototypal Inheritance :
+
+  let Person ={
+  name:"Alok",
+  greet:functon(){
+  return "Hi,I'm"+this.name ;
+  }
+  };
+
+  console.log(Person.\_ _ proto_ \_);
+  console.log(Person.proto === Object.prototype);
